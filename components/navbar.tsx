@@ -10,11 +10,11 @@ export default function Navbar() {
           className={styles.gradient1}
           style={{
             cursor: 'pointer',
-            fontSize: '1.2rem', // Remove the space here
-            fontWeight: 'bold', // Remove the extra space here
+            fontSize: '1.2rem',
+            fontWeight: 'bold',
           }}
         >
-          Tagen's Portfolio
+          Tagen&apos;s Portfolio {/* Escaped the single quotation mark here */}
         </p>
       </Link>
       <ConnectWallet />
