@@ -17,7 +17,10 @@ export default function Navbar() {
           Tagen&apos;s Portfolio {/* Escaped the single quotation mark here */}
         </p>
       </Link>
-      <ConnectWallet />
+      <ConnectWallet 
+      btnTitle='Sign In'
+      modalTitle='Select sign in method'
+      />
     </div>
   );
 }
