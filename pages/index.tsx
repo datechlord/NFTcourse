@@ -2,6 +2,8 @@ import { ConnectWallet } from "@thirdweb-dev/react";
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import { NextPage } from "next";
+import ContractCard from "../components/contract-card";
+import { ERC20_CONTRACT_ADDRESS } from "../constant/address";
 
 const Home: NextPage = () => {
   return (
@@ -11,13 +13,7 @@ const Home: NextPage = () => {
           <h1 className={styles.title}>
             My{" "}
             <span className={styles.gradientText0}>
-              <a
-                href="https://thirdweb.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
                Contracts
-              </a>
             </span>
           </h1>
 
@@ -27,7 +23,12 @@ const Home: NextPage = () => {
         </div>
 
         <div className={styles.grid}>
-         
+         <ContractCard
+         href="/"
+         contractAddress={ERC20_CONTRACT_ADDRESS}
+         title="ERC20 →"
+         description="Claim ERC@0 Tokens"
+         />
         </div>
       </div>
     </main>

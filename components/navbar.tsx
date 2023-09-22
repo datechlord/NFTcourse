@@ -89,10 +89,12 @@ import {
               )}
             </>
           ) : (
-            <ConnectWallet btnTitle="Login" modalTitle="Login" />
+            <ConnectWallet 
+            btnTitle="Login" 
+            modalTitle="Login" />
           )}
         </div>
       </div>
     );
   }
-  
+    
