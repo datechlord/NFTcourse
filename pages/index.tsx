@@ -3,7 +3,7 @@ import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import { NextPage } from "next";
 import ContractCard from "../components/contract-card";
-import { ERC20_CONTRACT_ADDRESS } from "../constant/address";
+import { ERC1155_CONTRACT_ADDRESS, ERC20_CONTRACT_ADDRESS, ERC721_CONTRACT_ADDRESS, PROFILE_STATUS_CONTRACT_ADDRESS, STAKING_CONTRACT_ADDRESS, TIP_JAR_CONTRACT_ADDRESS } from "../constant/address";
 
 const Home: NextPage = () => {
   return (
@@ -32,33 +32,38 @@ const Home: NextPage = () => {
 
          <ContractCard
          href="/"
-         contractAddress={ERC20_CONTRACT_ADDRESS}
-         title="ERC20 →"
-         description="Claim ERC20 Tokens"
+         contractAddress={ERC721_CONTRACT_ADDRESS}
+         title="ERC721 →"
+         description="Claim ERC721 Tokens"
          />
 
          <ContractCard
          href="/"
-         contractAddress={ERC20_CONTRACT_ADDRESS}
-         title="ERC20 →"
-         description="Claim ERC20 Tokens"
+         contractAddress={ERC1155_CONTRACT_ADDRESS}
+         title="ERC1155 →"
+         description="Claim ERC1155 Tokens"
          />
         
         <ContractCard
          href="/"
-         contractAddress={ERC20_CONTRACT_ADDRESS}
-         title="ERC20 →"
+         contractAddress={STAKING_CONTRACT_ADDRESS}
+         title="Staking →"
          description="Claim ERC20 Tokens"
          />
 
         <ContractCard
          href="/"
-         contractAddress={ERC20_CONTRACT_ADDRESS}
-         title="ERC20 →"
+         contractAddress={PROFILE_STATUS_CONTRACT_ADDRESS}
+         title="Profile Status →"
          description="Claim ERC20 Tokens"
          />
 
-
+        <ContractCard
+         href="/"
+         contractAddress={TIP_JAR_CONTRACT_ADDRESS}
+         title="Tip Jar →"
+         description="Claim ERC20 Tokens"
+         />
         </div>
 
       </div>
