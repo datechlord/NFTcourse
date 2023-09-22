@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "../styles/Home.module.css"
 import { useContext } from "react";
+
 import { MediaRenderer, useContract, useContractMetadata } from "@thirdweb-dev/react";
 
 type CardProps = {
@@ -25,10 +26,14 @@ export default function ContractCard(props: CardProps) {
         href={props.href}
         className={styles.card}
         >
+            {!isContractMetadataLoading ? (
             <MediaRenderer
               src={contractMetadata?.image}
               />
-              
+              ) : (
+                <p>Loading...</p>
+            )} 
+
         <div className={styles.cardText}>
             <h2 className={styles.gradientText1}>{props.title}</h2>
             <p>{props.description}</p>
@@ -39,5 +44,4 @@ export default function ContractCard(props: CardProps) {
 
         
 }
-
 
