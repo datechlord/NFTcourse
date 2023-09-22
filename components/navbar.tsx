@@ -38,7 +38,7 @@ import {
             {mobileMenuOpen ? 'Close' : 'Menu'}
           </button>
         </div>
-        <div className={`${styles.navbarLinks} ${mobileMenuOpen ? styles.mobileMenu : ''}`}>
+        {/* <div className={`${styles.navbarLinks} ${mobileMenuOpen ? styles.mobileMenu : ''}`}>
           <Link href="/erc1155">
             <p>ERC1155</p>
           </Link>
@@ -51,7 +51,7 @@ import {
           <Link href="/marketplace">
             <p>Marketplace</p>
           </Link>
-        </div>
+        </div> */}
         <div>
           {address ? (
             <>
