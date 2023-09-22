@@ -8,7 +8,7 @@ import { ERC20_CONTRACT_ADDRESS } from "../constant/address";
 const Home: NextPage = () => {
   return (
     <main className={styles.main}>
-      <div className={styles.navbarContainer}>
+      <div className={styles.container}>
         <div className={styles.header}>
           <h1 className={styles.title}>
             My{" "}
@@ -30,6 +30,7 @@ const Home: NextPage = () => {
          description="Claim ERC20 Tokens"
          />
         </div>
+
       </div>
     </main>
   );
