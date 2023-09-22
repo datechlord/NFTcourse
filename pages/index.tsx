@@ -27,7 +27,7 @@ const Home: NextPage = () => {
          href="/"
          contractAddress={ERC20_CONTRACT_ADDRESS}
          title="ERC20 →"
-         description="Claim ERC@0 Tokens"
+         description="Claim ERC20 Tokens"
          />
         </div>
       </div>
