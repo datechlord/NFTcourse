@@ -29,6 +29,36 @@ const Home: NextPage = () => {
          title="ERC20 →"
          description="Claim ERC20 Tokens"
          />
+
+         <ContractCard
+         href="/"
+         contractAddress={ERC20_CONTRACT_ADDRESS}
+         title="ERC20 →"
+         description="Claim ERC20 Tokens"
+         />
+
+         <ContractCard
+         href="/"
+         contractAddress={ERC20_CONTRACT_ADDRESS}
+         title="ERC20 →"
+         description="Claim ERC20 Tokens"
+         />
+        
+        <ContractCard
+         href="/"
+         contractAddress={ERC20_CONTRACT_ADDRESS}
+         title="ERC20 →"
+         description="Claim ERC20 Tokens"
+         />
+
+        <ContractCard
+         href="/"
+         contractAddress={ERC20_CONTRACT_ADDRESS}
+         title="ERC20 →"
+         description="Claim ERC20 Tokens"
+         />
+
+
         </div>
 
       </div>

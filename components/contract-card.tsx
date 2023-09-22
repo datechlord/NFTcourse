@@ -29,6 +29,8 @@ export default function ContractCard(props: CardProps) {
             {!isContractMetadataLoading ? (
             <MediaRenderer
               src={contractMetadata?.image}
+              width="100%"
+              height="auto"
               />
               ) : (
                 <p>Loading...</p>
