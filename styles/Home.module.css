@@ -407,53 +407,52 @@
 }
 
 
-/* Styling for the HeroCard */
-/* You can customize these styles according to your design */
-.heroCard {
-  background-color: #f0f0f0;
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 20px;
+/* Home.module.css */
+
+/* Loading text styles */
+.loadingText {
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+  margin: 20px;
 }
 
-.heroCardImage {
+/* Hero card container styles */
+.heroCardContainer {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Media renderer image styles */
+.heroCardContractImage {
   max-width: 100%;
   height: auto;
-}
-
-/* Styling for the component cards */
-.componentCard {
-  background-color: #ffffff;
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Styling for card titles */
-.cardTitle {
-  font-size: 1.2rem;
   margin-bottom: 10px;
 }
 
-/* Styling for loading messages */
-.loadingMessage {
-  color: #888;
-  font-style: italic;
+/* Hero card content styles */
+.heroCardContent {
+  text-align: center;
 }
 
-/* Styling for buttons */
-.matchButton {
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-right: 10px;
-  text-decoration: none;
+/* Title styles */
+.gradientText1 {
+  font-size: 24px;
+  color: #333;
+  background: linear-gradient(to right, #ff6600, #ffcc00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  display: inline;
 }
 
-.matchButton:hover {
-  background-color: #0056b3;
+/* Description styles */
+.description {
+  font-size: 16px;
+  color: #777;
+  margin-top: 10px;
 }
