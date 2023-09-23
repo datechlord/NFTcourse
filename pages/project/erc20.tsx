@@ -67,10 +67,10 @@ export default function ERC20Project() {
                         <p> Earn more tokens by staking an ERC721 NFT.</p>
                         <div>
                             <Link href='/project/staking'>
-                                <button className={styles.matchButton}>Stake ERC721</button>
+                                <button className={styles.generalBtn}>Stake ERC721</button>
                             </Link>
                             <Link href='/project/erc721'>
-                                <button className={styles.matchButton}>Claim ERC721</button>
+                                <button className={styles.generalBtn}>Claim ERC721</button>
                             </Link>
                         </div>
                         </div>
