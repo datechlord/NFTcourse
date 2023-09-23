@@ -29,7 +29,7 @@ import {
     };
   
     return (
-      <div className={`${styles.Container} ${mobileMenuOpen ? styles.mobileMenuOpen : ''}`}>
+      <div className={`${styles.navbarContainer} ${mobileMenuOpen ? styles.mobileMenuOpen : ''}`}>
         <div className={styles.navbarHeader}>
           <Link href="/">
             <p className={styles.navbarLogo}>NFT Course</p>
