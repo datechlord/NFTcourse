@@ -63,7 +63,7 @@ export default function ERC20Project() {
                         </div>
 
                         <div className={styles.componentCard}>
-                        <h3>Earn Tokens Balance</h3> 
+                        <h3>Earn Tokens</h3> 
                         <p> Earn more tokens by staking an ERC721 NFT.</p>
                         <div>
                             <Link href='/project/staking'>
