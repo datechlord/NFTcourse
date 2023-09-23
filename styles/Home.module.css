@@ -405,3 +405,55 @@
   color: #fff;
   margin: 0.75rem 0;
 }
+
+
+/* Styling for the HeroCard */
+/* You can customize these styles according to your design */
+.heroCard {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.heroCardImage {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Styling for the component cards */
+.componentCard {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for card titles */
+.cardTitle {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Styling for loading messages */
+.loadingMessage {
+  color: #888;
+  font-style: italic;
+}
+
+/* Styling for buttons */
+.matchButton {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.matchButton:hover {
+  background-color: #0056b3;
+}
