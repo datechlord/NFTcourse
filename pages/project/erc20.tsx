@@ -1,4 +1,4 @@
-import { useContract, useContractMetadata } from '@thirdweb-dev/react';
+import { useContract, useContractMetadata, useTokenSupply, useAddress, useTokenBalance, Web3Button } from '@thirdweb-dev/react';
 import HeroCard from '../../components/hero-card';
 import styles from '../../styles/Home.module.css';
 import { ERC20_CONTRACT_ADDRESS } from '../../constant/address';
@@ -6,6 +6,9 @@ import { ERC20_CONTRACT_ADDRESS } from '../../constant/address';
 
 
 export default function ERC20Project() {
+    
+    const address = useAddress();
+
     const {
         contract
     } = useContract(ERC20_CONTRACT_ADDRESS, "token");
@@ -14,6 +17,17 @@ export default function ERC20Project() {
         data: contractMetadata,
         isLoading: contractMetadataisLoading,
       } = useContractMetadata(contract);
+
+      const {
+         data: tokenBalance,
+         isLoading:tokenBalanceisLoading,
+      } = useTokenBalance(contract, address);
+  
+      const {
+        data: tokenSupply,
+        isLoading:tokenSupplyisLoading,
+     } = useTokenSupply(contract)
+ 
 
       return(
         <div className={styles.container}>
@@ -27,10 +41,24 @@ export default function ERC20Project() {
                 <div className={styles.grid}>
                     <div className={styles.componentCard}>
                         <h3>Token Stats</h3> 
+                        {tokenSupplyisLoading ? (
+                            <p>Loading Supply...</p>
+                        ):(
+                             <p>Total supply: {tokenSupply?.displayValue} {tokenSupply?.symbol}</p>
+                        )}
                         </div>
 
                         <div className={styles.componentCard}>
                         <h3>Token Balance</h3> 
+                        {tokenBalanceisLoading ? (
+                            <p>Loading Balance...</p>
+                        ):(
+                             <p>Balance: {tokenBalance?.displayValue} {tokenBalance?.symbol}</p>
+                        )}
+                        <Web3Button 
+                            contractAddress={ERC20_CONTRACT_ADDRESS}
+                            action={(contract) => contract.erc20.burn(10)}
+                        >Burn 10 Tokens</Web3Button>
                         </div>
 
                         <div className={styles.componentCard}>
