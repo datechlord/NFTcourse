@@ -23,6 +23,19 @@ export default function ERC721Project () {
                  description={contractMetadata?.description!}
                  image={contractMetadata?.image!} 
              />
+             <div className={styles.grid}>
+                <div className={styles.componentCard}>
+                 <p>Claim ERC721</p>
+                </div>
+
+                <div className={styles.componentCard}>
+                <p>Contract Stats</p>
+                </div>
+
+               <div className={styles.componentCard}>
+               <p>Your NFTs</p>
+               </div>
+             </div>
         </div>
      </div>
     )
