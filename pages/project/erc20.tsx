@@ -2,6 +2,7 @@ import { useContract, useContractMetadata, useTokenSupply, useAddress, useTokenB
 import HeroCard from '../../components/hero-card';
 import styles from '../../styles/Home.module.css';
 import { ERC20_CONTRACT_ADDRESS } from '../../constant/address';
+import Link from 'next/link';
 
 
 
@@ -63,6 +64,15 @@ export default function ERC20Project() {
 
                         <div className={styles.componentCard}>
                         <h3>Earn Tokens Balance</h3> 
+                        <p> Earn more tokens by staking an ERC721 NFT.</p>
+                        <div>
+                            <Link href='/project/staking'>
+                                <button className={styles.matchButton}>Stake ERC721</button>
+                            </Link>
+                            <Link href='/project/erc721'>
+                                <button className={styles.matchButton}>Claim ERC721</button>
+                            </Link>
+                        </div>
                         </div>
                 </div>
              </div>
