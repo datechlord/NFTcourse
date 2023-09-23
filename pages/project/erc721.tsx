@@ -26,6 +26,7 @@ export default function ERC721Project () {
              <div className={styles.grid}>
                 <div className={styles.componentCard}>
                  <p>Claim ERC721</p>
+                 <p>Claim an ERC721 NFT for FREE!</p>
                 </div>
 
                 <div className={styles.componentCard}>
