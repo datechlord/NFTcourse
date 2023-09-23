@@ -24,7 +24,7 @@ const Home: NextPage = () => {
 
         <div className={styles.grid}>
          <ContractCard
-         href="/"
+         href="/project/erc20"
          contractAddress={ERC20_CONTRACT_ADDRESS}
          title="ERC20 →"
          description="Claim ERC20 Tokens"

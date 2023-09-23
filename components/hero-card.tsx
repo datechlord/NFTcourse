@@ -25,11 +25,13 @@ export default function HeroCard(props: HeroCardProps) {
                       className={styles.heroCardContractImage} 
                    />
                    <div className={styles.heroCardContent}>
-
+                       <h1 className={styles.gradientText1}>
+                        {props.title}
+                        </h1>
+                        <p>{props.description}</p>
                    </div>
                 </div>
              )}
-      
       </>
     )
 }
