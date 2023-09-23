@@ -419,20 +419,25 @@
 
 /* Hero card container styles */
 .heroCardContainer {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  background-color: #100f0f;
+  border: 1px solid #2f2d2d;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+  gap: 16px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  flex-wrap: nowrap;
+  padding: 20px;
 }
 
 /* Media renderer image styles */
 .heroCardContractImage {
-  max-width: 100%;
+  max-width: 556px;
   height: auto;
   margin-bottom: 10px;
+  border-radius: 15px;
+
 }
 
 /* Hero card content styles */
