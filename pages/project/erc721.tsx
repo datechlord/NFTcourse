@@ -1,9 +1,11 @@
-import { Web3Button, useClaimedNFTSupply, useContract, useContractMetadata, useTotalCount } from '@thirdweb-dev/react';
+import { Web3Button, useClaimedNFTSupply, useContract, useContractMetadata, useTotalCount, useAddress, useOwnedNFTs } from '@thirdweb-dev/react';
 import HeroCard from '../../components/hero-card';
 import styles from '../../styles/Home.module.css';
 import { ERC721_CONTRACT_ADDRESS } from '../../constant/address';
+import Link from 'next/link';
 
 export default function ERC721Project () {
+    const address = useAddress;
 
     const {
         contract
@@ -24,6 +26,10 @@ export default function ERC721Project () {
         isLoading: totalClaimedSupplyisLoading,
     } = useClaimedNFTSupply (contract);
 
+    const {
+        data: ownedNFTs,
+        isLoading: ownedNFTsIsLoading,
+    } = useOwnedNFTs (contract, address);
 
     return (
      <div className={styles.container}>
@@ -64,6 +70,41 @@ export default function ERC721Project () {
 
                <div className={styles.componentCard}>
                <p>Your NFTs</p>
+               <p>
+                Total Owned:
+                {ownedNFTsIsLoading ? (
+                    "Loading...."
+                ) : (
+                     `${ownedNFTs?.length}`
+                )}
+               </p>
+               </div>
+             </div>
+             <div className={styles.container}>
+               <h2>My NFTs:</h2>
+               <div className={styles.grid}>
+                {ownedNFTsIsLoading ? (
+                    <p>Loading...</p>
+                ):(
+                  ownedNFTs?.map((nft) => (
+                    <div className={styles.card} key={nft.metadata.id}>
+                     <div className={styles.cardText}>
+                       <h2>{nft.metadata.name}</h2>
+                     </div>
+                     <Link href={`/project/staking`}>
+                       <button
+                          className={styles.generalBtn}
+                          style={{
+                            width: "100%",
+                            borderRadius:"0 0 10px 10px",
+                          }}
+                       >
+                        Stake NFT
+                       </button>
+                     </Link>
+                    </div>
+                  ))
+                )}
                </div>
              </div>
         </div>
