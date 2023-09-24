@@ -1,11 +1,11 @@
-import { Web3Button, useClaimedNFTSupply, useContract, useContractMetadata, useTotalCount, useAddress, useOwnedNFTs } from '@thirdweb-dev/react';
+import { Web3Button, useClaimedNFTSupply, useContract, useContractMetadata, useTotalCount, useAddress, useOwnedNFTs, ThirdwebNftMedia } from '@thirdweb-dev/react';
 import HeroCard from '../../components/hero-card';
 import styles from '../../styles/Home.module.css';
 import { ERC721_CONTRACT_ADDRESS } from '../../constant/address';
 import Link from 'next/link';
 
 export default function ERC721Project () {
-    const address = useAddress;
+    const address = useAddress();
 
     const {
         contract
@@ -40,7 +40,7 @@ export default function ERC721Project () {
                  description={contractMetadata?.description!}
                  image={contractMetadata?.image!} 
              />
-             <div className={styles.grid}>
+             <div className={styles.grid} style={{justifyContent:"flex-start"}}>
                 <div className={styles.componentCard}>
                  <p>Claim ERC721</p>
                  <p>Claim an ERC721 NFT for FREE!</p>
@@ -88,6 +88,9 @@ export default function ERC721Project () {
                 ):(
                   ownedNFTs?.map((nft) => (
                     <div className={styles.card} key={nft.metadata.id}>
+                        <ThirdwebNftMedia
+                            metadata={nft.metadata}
+                        />
                      <div className={styles.cardText}>
                        <h2>{nft.metadata.name}</h2>
                      </div>
