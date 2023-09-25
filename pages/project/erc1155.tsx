@@ -1,10 +1,11 @@
-import { Web3Button, useContract, useContractMetadata, useTotalCount } from '@thirdweb-dev/react';
+import { Web3Button, useAddress, useContract, useContractMetadata, useOwnedNFTs, useTotalCirculatingSupply, useTotalCount } from '@thirdweb-dev/react';
 import HeroCard from '../../components/hero-card';
 import styles from '../../styles/Home.module.css';
 import { ERC1155_CONTRACT_ADDRESS } from '../../constant/address';
 
-
 export default function ERC1155Project() {
+    const address = useAddress();
+
     const {
         contract
     } = useContract(ERC1155_CONTRACT_ADDRESS, "edition-drop")
@@ -16,10 +17,18 @@ export default function ERC1155Project() {
 
     const{
         data: contractNFTSupply,
-        isLoading: contractNFTSupplyisLoading,
+        isLoading: contractNFTSupplyIsLoading,
     } = useTotalCount(contract);
 
+    const {
+        data: totalCirculatingSupply,
+        isLoading: totalCirculatingSupplyIsLoading,
+    } = useTotalCirculatingSupply (contract, 0);
 
+    const {
+         data: ownedNFTs,
+         isLoading: ownedNFTsIsLoading,
+    } = useOwnedNFTs (contract, address);
 
     return(
         <div className={styles.container}>
@@ -43,13 +52,22 @@ export default function ERC1155Project() {
 
                 <div className={styles.componentCard}>
                 <h3>Contracts Stats</h3>
-                 <p>Total NFTs
-                    {contractNFTSupplyisLoading ? "Loading" : `${contractNFTSupply?.toNumber()}`}
+                 <p>Total NFTs:
+                    {contractNFTSupplyIsLoading ? "Loading" : `${contractNFTSupply?.toNumber()}`}
                  </p>
+
+                 <p>
+                    Total Circulating Supply TokenID: 
+                    {totalCirculatingSupplyIsLoading ? "Loading" : `${totalCirculatingSupply?.toNumber()}`}</p>
                 </div>
 
                 <div className={styles.componentCard}>
                 <h3>Your NFTs</h3>
+                {ownedNFTsIsLoading ? "Loading...": (
+                    ownedNFTs?.map((nft) => (
+                        <p key={nft.metadata.id}> TokenID#{nft.metadata.id} Owned: {nft.quantityOwned}</p>
+                    ))
+                )}
                 </div>
 
               </div>
