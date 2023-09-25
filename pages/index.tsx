@@ -59,7 +59,7 @@ const Home: NextPage = () => {
          />
 
         <ContractCard
-         href="/"
+         href="/project/tipjar"
          contractAddress={TIP_JAR_CONTRACT_ADDRESS}
          title="Tip Jar →"
          description="Leave a tip on the blockchain"
