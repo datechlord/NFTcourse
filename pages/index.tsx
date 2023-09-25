@@ -45,7 +45,7 @@ const Home: NextPage = () => {
          />
         
         <ContractCard
-         href="/project/stake-nft-card"
+         href="/project/staking"
          contractAddress={STAKING_CONTRACT_ADDRESS}
          title="Staking →"
          description="Stake your ERC721 NFT to earn ERC20"
