@@ -1,4 +1,4 @@
-import { Web3Button, useContract, useContractMetadata } from '@thirdweb-dev/react';
+import { Web3Button, useContract, useContractMetadata, useTotalCount } from '@thirdweb-dev/react';
 import HeroCard from '../../components/hero-card';
 import styles from '../../styles/Home.module.css';
 import { ERC1155_CONTRACT_ADDRESS } from '../../constant/address';
@@ -11,8 +11,15 @@ export default function ERC1155Project() {
 
     const {
         data: contractMetadata,
-        isLoading: contractMetadataIsLoading
+        isLoading: contractMetadataIsLoading,
     } = useContractMetadata(contract);
+
+    const{
+        data: contractNFTSupply,
+        isLoading: contractNFTSupplyisLoading,
+    } = useTotalCount(contract);
+
+
 
     return(
         <div className={styles.container}>
@@ -36,6 +43,9 @@ export default function ERC1155Project() {
 
                 <div className={styles.componentCard}>
                 <h3>Contracts Stats</h3>
+                 <p>Total NFTs
+                    {contractNFTSupplyisLoading ? "Loading" : `${contractNFTSupply?.toNumber()}`}
+                 </p>
                 </div>
 
                 <div className={styles.componentCard}>
