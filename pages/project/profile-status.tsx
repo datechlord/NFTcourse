@@ -75,6 +75,7 @@ export default function ProfileStatusProject() {
                    contractAddress={PROFILE_STATUS_CONTRACT_ADDRESS}
                    action={updateStatus}
                      />
+                     Update Status
                   </div>
 
                 </div>
