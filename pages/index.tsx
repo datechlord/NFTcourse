@@ -52,7 +52,7 @@ const Home: NextPage = () => {
          />
 
         <ContractCard
-         href="/"
+         href="/project/profile-status"
          contractAddress={PROFILE_STATUS_CONTRACT_ADDRESS}
          title="Profile Status →"
          description="Update your profile status on the blockchain"
