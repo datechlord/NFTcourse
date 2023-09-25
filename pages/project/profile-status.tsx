@@ -74,8 +74,8 @@ export default function ProfileStatusProject() {
                  <Web3Button 
                    contractAddress={PROFILE_STATUS_CONTRACT_ADDRESS}
                    action={updateStatus}
-                     />
-                     Update Status
+                     >
+                     Update Status</Web3Button>
                   </div>
 
                 </div>
