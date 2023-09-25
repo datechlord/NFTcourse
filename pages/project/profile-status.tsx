@@ -46,36 +46,37 @@ export default function ProfileStatusProject() {
              />
              <div className={styles.grid}>
              <div className={styles.componentCard}>
-                <h3>Current Status</h3>
-                {profileStatusIsLoading ? "Loading..." : (
-                    profileStatus.exists ? profileStatus.statusMessage : <i>"No Status yet"</i>
-                )}
-                </div>
+    <h3>Current Status</h3>
+    {profileStatusIsLoading ? "Loading..." : (
+        profileStatus.exists ? profileStatus.statusMessage : <i>&ldquo;No Status yet&rdquo;</i>
+    )}
+</div>
 
                 <div className={styles.componentCard}>
                 <h3>Update Status</h3>
-                <div 
-                style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "flex-start",
-                }}
-                >
-                    <input
-                    type="text"
-                    value={status}
-                    onChange={(e) => setStatus(e.target.value)}
-                    style={{
-                        width: "100%",
-                        height:"2rem",
-                        marginBottom: "1rem",
-                    }}
-                    />
-                    <Web3Button 
-                    contractAddress={PROFILE_STATUS_CONTRACT_ADDRESS}
-                    action={updateStatus}
-                    />
-                </div>
+                    <div 
+                     style={{
+                     display: "flex",
+                     flexDirection: "column",
+                     alignItems: "flex-start",
+                       }}
+                         >
+                       <input
+                      type="text"
+                      value={status}
+                      onChange={(e) => setStatus(e.target.value)}
+                       style={{
+                       width: "100%",
+                       height:"2rem",
+                       marginBottom: "1rem",
+                              }}
+                 />
+                 <Web3Button 
+                   contractAddress={PROFILE_STATUS_CONTRACT_ADDRESS}
+                   action={updateStatus}
+                     />
+                  </div>
+
                 </div>
 
                 <div className={styles.componentCard}>
