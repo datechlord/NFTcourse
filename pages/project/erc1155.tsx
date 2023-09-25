@@ -1,4 +1,4 @@
-import { useContract, useContractMetadata } from '@thirdweb-dev/react';
+import { Web3Button, useContract, useContractMetadata } from '@thirdweb-dev/react';
 import HeroCard from '../../components/hero-card';
 import styles from '../../styles/Home.module.css';
 import { ERC1155_CONTRACT_ADDRESS } from '../../constant/address';
@@ -28,6 +28,10 @@ export default function ERC1155Project() {
               <div className={styles.componentCard}>
                 <h3>Claim ERC1155</h3>
                 <p>Claim an ERC1155 NFT for 10 ERC20 tokens</p>
+                <Web3Button
+                 contractAddress={ERC1155_CONTRACT_ADDRESS}
+                 action={(contract) => contract.erc1155.claim(0,1)}
+                >Claim NFT</Web3Button>
                 </div>
 
                 <div className={styles.componentCard}>
