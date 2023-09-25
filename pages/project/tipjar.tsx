@@ -1,7 +1,7 @@
 import { ContractMetadata } from '@thirdweb-dev/sdk';
 import HeroCard from '../../components/hero-card';
 import styles from '../../styles/Home.module.css';
-import { Web3Button, useContract, useContractMetadata, useContractRead } from '@thirdweb-dev/react';
+import { Web3Button, useAddress, useContract, useContractMetadata, useContractRead } from '@thirdweb-dev/react';
 import { TIP_JAR_CONTRACT_ADDRESS } from '../../constant/address';
 import { ethers } from 'ethers';
 
@@ -32,6 +32,7 @@ export default function TipJarProject() {
         contract,
         "owner",
     );
+
 
     return (
         <div className={styles.container}>
